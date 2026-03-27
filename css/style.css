@@ -1,0 +1,847 @@
+:root {
+  --carousel-angle: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cinzel Decorative", serif;
+  color: #ffc800;
+  text-shadow: 0 0 5px rgba(0, 188, 212, 0.8), 0 0 15px rgba(255, 200, 0, 0.8);
+  letter-spacing: 1px;
+}
+
+.ui.menu {
+  background: rgba(10, 10, 25, 0.75);
+  backdrop-filter: blur(6px); /* soft glass effect */
+  border-bottom: 2px solid rgba(255, 200, 0, 0.5); /* golden shimmer line */
+  box-shadow: 0 0 12px rgba(255, 200, 0, 0.2); /* soft glow */
+  transition: background 0.3s, box-shadow 0.3s;
+  position: relative; /* needed for z-index to work */
+  z-index: 10; /* higher than overlay */
+}
+
+/* Hover effect: shimmering light */
+.ui.menu .item:hover {
+  color: #ffc800 !important;
+  text-shadow: 0 0 8px rgba(255, 200, 0, 0.6);
+}
+
+/* Active tab: radiant gold glow */
+.ui.menu .item.active {
+  background: rgba(255, 200, 0, 0.15);
+  border-bottom: 3px solid #ffc800;
+  color: #ffc800 !important;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 200, 0, 0.7);
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.parallax {
+  position: relative; /* ensures z-index works properly */
+  z-index: 1; /* keeps it below the menu */
+}
+
+.parallax::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.4);
+  z-index: 0; /* move overlay behind text and menu */
+}
+/* Overlay container */
+.parallax::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.4); /* adjust transparency/color */
+  z-index: 1;
+}
+
+.parallax-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  background-color: rgba(0, 128, 128, 0.5); /* transparent teal overlay */
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.parallax {
+  /* Background image */
+  background-image: url("../images/KH3.jpg");
+
+  /* Full height */
+  height: 100vh;
+
+  /* Parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  margin: 0;
+}
+
+/* Index */
+button {
+  padding: 1em 2em;
+  background-color: rgb(64, 0, 128);
+  color: rgb(255, 255, 255);
+}
+
+#displayGame {
+  border: solid rgb(64, 0, 128) 5px;
+  padding: 0.5em 1em;
+  text-align: center;
+  width: 75%;
+  margin-bottom: 0 em;
+  background-color: rgb(0, 128, 111);
+}
+
+header {
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: 50px;
+}
+/* Page Three Content */
+#container {
+  display: flex;
+  width: 100%;
+  margin: 0.5em auto;
+  padding: 1em;
+}
+
+h1 {
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.card {
+  flex: 0 0 250px;
+  margin: 10px;
+  border: 10px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.card img {
+  max-width: 100%;
+  margin: 0;
+}
+
+.card .text {
+  padding: 0 20px 10px;
+}
+
+.card p:nth-of-type(1) {
+  padding-bottom: 1em;
+  border-bottom: solid lightgray 1px;
+}
+
+.card p:nth-of-type(2) {
+  color: gray;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+/* Page Two Content */
+form {
+  border: solid #00abe4;
+  padding: 1em;
+  width: 50%;
+  margin: 1em auto;
+}
+
+.form-row {
+  display: flex;
+}
+
+.form-row > label {
+  flex: 0 1 30%;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+form input {
+  flex: 2;
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+
+form button {
+  padding: 1em;
+  background: #00abe4;
+  color: white;
+  border: 0;
+  margin-top: 1e;
+}
+
+#container {
+  display: flex;
+  flex-direction: column; /* Stack table & button vertically */
+  align-items: center; /* Center both horizontally */
+  justify-content: center;
+  text-align: center;
+  margin: 2rem auto;
+  width: 90%;
+  gap: 1.5rem; /* Space between table and button */
+}
+
+h1 {
+  text-align: center;
+}
+
+#container table {
+  width: 80%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.2);
+  overflow: hidden;
+  font-family: "Cinzel Decorative", serif;
+  color: #035452;
+}
+table,
+th,
+td {
+  border: 1px solid #ddd;
+  /*border: solid rgb(43, 31, 107) 1px;*/
+  padding: 8px;
+}
+
+/* === THEMED ADD GAME BUTTON === */
+#toggle,
+form button {
+  background: linear-gradient(135deg, #00bcd4 0%, #007c91 100%); /* teal glow */
+  color: #fff;
+  font-family: "Cinzel Decorative", serif;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border: 2px solid rgba(255, 200, 0, 0.7); /* gold outline */
+  border-radius: 12px;
+  padding: 0.8em 1.5em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 200, 0, 0.4);
+}
+
+#toggle:hover,
+form button:hover {
+  background: linear-gradient(135deg, #ffc800 0%, #ffb000 100%);
+  color: #002b36; /* contrast text */
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(255, 200, 0, 0.8);
+}
+
+/* Table cells */
+#container th {
+  background: linear-gradient(135deg, #007c91, #00bcd4);
+  color: #ffc800;
+  text-transform: uppercase;
+  padding: 1rem;
+  letter-spacing: 1px;
+  border-bottom: 2px solid rgba(255, 200, 0, 0.6);
+}
+
+#container td {
+  padding: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 200, 0, 0.15);
+  transition: background-color 0.3s;
+}
+
+#container tr:hover td {
+  background-color: rgba(0, 188, 212, 0.15);
+}
+
+/* Remove last row border */
+#container tr:last-child td {
+  border-bottom: none;
+}
+
+button {
+  padding: 1em;
+  background: #66bdcc;
+  color: rgb(49, 168, 164);
+  border: 0;
+  margin-top: 1rem auto;
+}
+
+#container table button {
+  background-color: #66bdcc;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#container table button:hover {
+  background-color: #4a90e2;
+}
+
+/* Modal Box */
+form {
+  flex: 1;
+}
+
+form {
+  border: solid #00abe4;
+  padding: 1em;
+}
+
+.form-row {
+  display: flex;
+}
+
+.form-row > label {
+  flex: 0 1 30%;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* === FORM INPUTS INSIDE DIALOG === */
+form input,
+form select {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 188, 212, 0.5);
+  border-radius: 8px;
+  color: #b4b40d;
+  padding: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: #ffc800;
+  box-shadow: 0 0 8px rgba(255, 200, 0, 0.5);
+}
+
+form button {
+  padding: 1em;
+  background: #00abe4;
+  color: white;
+  border: 0;
+  margin-top: 1em;
+}
+
+/* === MODAL (DIALOG) BOX === */
+dialog {
+  background: radial-gradient(circle at top, #002b36 0%, #000 100%);
+  width: 800px;
+  border: 2px solid rgba(255, 200, 0, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 188, 212, 0.4);
+  color: rgb(255, 255, 255);
+  font-family: "Cinzel Decorative", serif;
+}
+
+dialog .modal__title {
+  background: linear-gradient(90deg, #007c91, #00bcd4);
+  color: #ffc800;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid rgba(255, 200, 0, 0.4);
+}
+
+dialog::backdrop {
+  background: rgba(88, 102, 116, 0.7);
+}
+
+dialog .fa-close {
+  float: right;
+}
+
+/* Center the radio section */
+#radio-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Radio options row */
+#radio-section .option-group {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Hide default radio buttons */
+#radio-section input[type="radio"] {
+  display: none;
+}
+
+/* Custom radio style */
+#radio-section label {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  user-select: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+/* Circle */
+#radio-section label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  transition: 0.3s;
+  border: 2px solid #ffc800;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Inner circle when checked */
+#radio-section input[type="radio"]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  transition: 0.3s;
+  background-color: #00bcd4;
+}
+
+/* Hover effect on label */
+#radio-section label:hover::before {
+  border-color: #00bcd4;
+}
+
+/* Centered popup overlay */
+#popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* dim background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup content box */
+#popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Close button */
+#close-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #777;
+  cursor: pointer;
+}
+
+/* Image styling */
+#popup-image {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+#intro {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+#game-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem auto;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.quote-image {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.review-container {
+  display: flex;
+  gap: 180px; /* space between each review */
+}
+
+.review-section {
+  display: flex;
+  flex-direction: column; /* keeps text above image inside each section */
+  align-items: center; /* center content horizontally */
+}
+
+.review-image {
+  max-width: 200px; /* adjust size */
+  height: auto;
+}
+
+#colorHeader {
+  text-align: center;
+  font-family: "Cinzel Decorative", serif;
+  color: #ffc800;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* soft glow */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#colorHeader:hover {
+  color: #00bcd4;
+  text-shadow: 2px 2px 10px rgba(0, 188, 212, 0.8);
+}
+
+/* Game Carousel Styling*/
+.game-section {
+  text-align: center;
+  margin: 3rem auto;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Increased height */
+  margin: 0 auto;
+  perspective: 1200px; /* Increased perspective */
+}
+
+.carousel {
+  transform-style: preserve-3d;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(calc(var(--carousel-angle, 0) * 1deg));
+  transition: all 0.5s ease-in-out;
+}
+
+.carousel-face {
+  position: absolute;
+  width: 140px; /* Smaller width */
+  height: 200px; /* Smaller height */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  border: 3px solid white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Position each face around the circle with LARGER radius */
+.carousel-face:nth-child(1) {
+  transform: rotateY(0deg) translateZ(500px);
+}
+
+.carousel-face:nth-child(2) {
+  transform: rotateY(24deg) translateZ(500px);
+}
+
+.carousel-face:nth-child(3) {
+  transform: rotateY(48deg) translateZ(500px);
+}
+
+.carousel-face:nth-child(4) {
+  transform: rotateY(72deg) translateZ(500px);
+}
+
+.carousel-face:nth-child(5) {
+  transform: rotateY(96deg) translateZ(500px);
+}
+
+.carousel-face:nth-child(6) {
+  transform: rotateY(120deg) translateZ(500px);
+}
+
+.carousel-face:nth-child(7) {
+  transform: rotateY(144deg) translateZ(500px);
+}
+
+.carousel-face:nth-child(8) {
+  transform: rotateY(168deg) translateZ(500px);
+}
+
+.carousel-face:nth-child(9) {
+  transform: rotateY(192deg) translateZ(500px);
+}
+
+.carousel-face:nth-child(10) {
+  transform: rotateY(216deg) translateZ(500px);
+}
+
+.carousel-face:nth-child(11) {
+  transform: rotateY(240deg) translateZ(500px);
+}
+
+.carousel-face:nth-child(12) {
+  transform: rotateY(264deg) translateZ(500px);
+}
+
+.carousel-face:nth-child(13) {
+  transform: rotateY(288deg) translateZ(500px);
+}
+
+.carousel-face:nth-child(14) {
+  transform: rotateY(312deg) translateZ(500px);
+}
+
+.carousel-face:nth-child(15) {
+  transform: rotateY(336deg) translateZ(500px);
+}
+
+.carousel-controls {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.carousel-btn {
+  background: #ffc800;
+  color: #000;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn:hover {
+  background: #ffd95c;
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/*Section Divison Page 3*/
+/* Our Picks Section */
+#stackable {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 43, 54, 0.95) 0%,
+    rgba(0, 20, 30, 0.9) 100%
+  ) !important;
+  padding: 3rem 2rem !important;
+  margin: 2rem auto !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  border: 2px solid rgba(255, 200, 0, 0.3) !important;
+  max-width: 1200px !important;
+}
+
+/* Game Gallery Section */
+.game-section {
+  background: linear-gradient(
+    180deg,
+    rgba(20, 0, 40, 0.95) 0%,
+    rgba(10, 0, 20, 0.9) 100%
+  ) !important;
+  text-align: center !important;
+  margin: 4rem auto !important;
+  padding: 3rem 2rem 5rem 2rem !important; /* Extra bottom padding for buttons */
+  width: 100% !important;
+  max-width: 1200px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  border: 2px solid rgba(255, 200, 0, 0.3) !important;
+}
+
+/* Section Headers */
+#stackable h1,
+.game-section h2 {
+  font-size: 2.5rem !important;
+  margin-bottom: 1.5rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  position: relative !important;
+  display: inline-block !important;
+}
+
+/* Decorative underline for headers */
+#stackable h1::after,
+.game-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ffc800, transparent);
+  box-shadow: 0 0 10px rgba(255, 200, 0, 0.6);
+}
+
+/* Divider between sections */
+#stackable::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 188, 212, 0.5),
+    transparent
+  );
+  margin: 3rem auto 0;
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+}
+
+/* Intro text */
+#stackable #intro {
+  text-align: center !important;
+  margin: 2rem auto !important;
+  font-size: 1.3rem !important;
+  color: #ffffff !important;
+  max-width: 800px !important;
+  padding: 1rem !important;
+  background: rgba(0, 188, 212, 0.15) !important;
+  border-radius: 10px !important;
+}
+
+#stackable #intro strong {
+  color: #ffc800 !important;
+  font-weight: bold !important;
+}
+
+/* Form styling */
+#stackable form {
+  background: rgba(0, 0, 0, 0.4) !important;
+  border: 2px solid rgba(0, 188, 212, 0.6) !important;
+  border-radius: 15px !important;
+  padding: 2em !important;
+  width: 70% !important;
+  margin: 2em auto !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Form label */
+#stackable form .form-row > label {
+  color: #ffffff !important;
+  font-size: 1.3rem !important;
+}
+
+/* Select dropdown styling */
+#stackable form select {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border: 2px solid rgba(255, 200, 0, 0.5) !important;
+  border-radius: 8px !important;
+  color: #000000 !important;
+  padding: 0.7rem !important;
+  font-size: 1.1rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s !important;
+}
+
+#stackable form select:focus {
+  outline: none !important;
+  border-color: #ffc800 !important;
+  box-shadow: 0 0 10px rgba(255, 200, 0, 0.6) !important;
+}
+
+/* Cards container */
+.cards {
+  margin-top: 2rem !important;
+  padding: 1rem !important;
+}
+
+/* Image Rollover Effect */
+.rollover-wrap {
+  position: relative;
+  width: 200px; /* matches your review-image size */
+  height: auto;
+}
+
+.rollover-wrap img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Hide hover image by default */
+.rollover-wrap img.hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+}
+
+/* Fade in hover image on mouseover */
+.rollover-wrap:hover img.hover {
+  opacity: 1;
+}
+
+.rollover-wrap:hover img {
+  box-shadow: 0 0 15px rgba(255, 200, 0, 0.7);
+  transform: scale(1.03);
+  transition: all 0.35s ease;
+}
