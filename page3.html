@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../dist/styles/jquery.carousel-3d.default.css"
+    />
+
+    <script src="../bower_components/jquery/jquery.js"></script>
+    <script src="../bower_components/javascript-detect-element-resize/jquery.resize.js"></script>
+    <script src="../bower_components/waitForImages/dist/jquery.waitforimages.js"></script>
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <script src="../dist/jquery.carousel-3d.js"></script>
+  </head>
+
+  <body>
+    <div class="ui stackable menu">
+      <div class="item">
+        <img src="/images/paopu.png" alt="Logo" />
+      </div>
+      <a class="item" href="index.html">Welcome!</a>
+      <a class="item" href="page2.html">Your Games</a>
+      <a class="item" href="page3.html">Check These Out!</a>
+    </div>
+
+    <div class="parallax">
+      <div class="parallax-text">
+        <h2>Welcome to <i>What's Your Favorite Game?</i></h2>
+        <p>Take note of the games you love and want to play!</p>
+      </div>
+    </div>
+
+    <div id="stackable">
+      <h1>Our Picks</h1>
+      <div class="ui text container" id="intro"></div>
+      <form>
+        <div class="form-row">
+          <label for="name">Games</label>
+          <select name="genre" id="genre">
+            <option value="">Select a Game</option>
+            <option value="JRPG">JRPG</option>
+            <option value="Fantasy/RPG">Fantasy/RPG</option>
+            <option value="Simulation">Simulation</option>
+            <option value="Cozy">Cozy</option>
+            <option value="Open World">Open World</option>
+            <option value="Horror">Horror</option>
+          </select>
+        </div>
+      </form>
+      <br />
+      <div class="cards"></div>
+    </div>
+
+    <!-- Game Carousel Section -->
+    <div class="game-section">
+      <h2>Game Gallery</h2>
+      <div class="carousel-container">
+        <div class="carousel">
+          <div
+            class="carousel-face"
+            style="background-image: url('images/folk.jpg')"
+          ></div>
+          <div
+            class="carousel-face"
+            style="background-image: url('images/f3.jpg')"
+          ></div>
+          <div
+            class="carousel-face"
+            style="background-image: url('images/fantasy.jpg')"
+          ></div>
+          <div
+            class="carousel-face"
+            style="background-image: url('images/fashion.jpg')"
+          ></div>
+          <div
+            class="carousel-face"
+            style="background-image: url('images/Infinity.jpg')"
+          ></div>
+          <div
+            class="carousel-face"
+            style="background-image: url('images/LiS.jpg')"
+          ></div>
+          <div
+            class="carousel-face"
+            style="background-image: url('images/Elden.jpg')"
+          ></div>
+          <div
+            class="carousel-face"
+            style="background-image: url('images/fd.jpg')"
+          ></div>
+          <div
+            class="carousel-face"
+            style="background-image: url('images/tales.jpg')"
+          ></div>
+          <div
+            class="carousel-face"
+            style="background-image: url('images/KH3.jpg')"
+          ></div>
+          <div
+            class="carousel-face"
+            style="background-image: url('images/fire.jpg')"
+          ></div>
+          <div
+            class="carousel-face"
+            style="background-image: url('images/ghost.jpg')"
+          ></div>
+          <div
+            class="carousel-face"
+            style="background-image: url('images/resi.png')"
+          ></div>
+          <div
+            class="carousel-face"
+            style="background-image: url('images/OW2.jpg')"
+          ></div>
+          <div
+            class="carousel-face"
+            style="background-image: url('images/sf.jpg')"
+          ></div>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn prev-btn">◄</button>
+          <button class="carousel-btn next-btn">►</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script3.js"></script>
+
+    <script>
+      // Highlight current page in the menu
+      const current = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".ui.menu a.item").forEach((link) => {
+        if (link.getAttribute("href") === current) {
+          link.classList.add("active");
+        }
+      });
+    </script>
+  </body>
+</html>

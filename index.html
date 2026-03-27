@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css"
+    />
+
+    <title>What's Your Favorite Game?</title>
+  </head>
+
+  <body>
+    <div class="ui stackable menu">
+      <div class="item">
+        <img src="/images/paopu.png" alt="Logo" />
+      </div>
+      <a class="item" href="index.html">Welcome!</a>
+      <a class="item" href="page2.html">Your Games</a>
+      <a class="item" href="page3.html">Check These Out!</a>
+    </div>
+
+    <div class="parallax">
+      <div class="parallax-text">
+        <h2>Welcome to <i>What's Your Favorite Game?</i></h2>
+        <p>Take note of the games you love and want to play!</p>
+      </div>
+    </div>
+
+    <div class="ui raised very padded text container segment">
+      <h2 id="colorHeader" class="ui header">Hey There!</h2>
+      <p id="info"></p>
+    </div>
+
+    <div id="game-section">
+      <p id="displayDate"></p>
+      <div id="displayGame">
+        <p id="games"></p>
+      </div>
+      <button>New Game</button>
+    </div>
+
+    <script src="js/script.js"></script>
+
+    <script>
+      // Highlight current page in the menu
+      const current = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".ui.menu a.item").forEach((link) => {
+        if (link.getAttribute("href") === current) {
+          link.classList.add("active");
+        }
+      });
+    </script>
+  </body>
+</html>

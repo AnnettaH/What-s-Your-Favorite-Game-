@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.4/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.4/dist/semantic.min.js"></script>
+</head>
+
+<body>
+
+<div class="ui stackable menu">
+  <div class="item">
+    <img src="/images/paopu.png" alt="Logo">
+  </div>
+  <a class="item" href="index.html">Welcome!</a>
+  <a class="item" href="page2.html">Your Games</a>
+  <a class="item" href="page3.html">Check These Out!</a>
+</div>
+
+<div class="parallax">
+  <div class="parallax-text">
+    <h2>Welcome to <i>What's Your Favorite Game?</i></h2>
+    <p>Take note of the games you love and want to play!</p>
+  </div>
+</div>
+
+  <div class="ui text container" id="intro"></div>
+
+<div class="ui container" id="radio-section">
+    <h2 class="ui header">Choose a random genre!</h2>
+
+    <!-- Radio button list -->
+    <div class="ui form option-group">
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="ideas" value="Simulation">
+          <label>Simulation</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="ideas" value="Horror">
+          <label>Horror</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="ideas" value="RPG">
+          <label>RPG</label>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Popup container (hidden by default) -->
+  <div id="popup"></div>
+
+
+  <h1>Add Your Games!</h1>
+    <div id="container">
+        <table>
+        </table>
+        <button id="toggle">Add a Record</button>
+
+        <!-- Add form inside a modal dialog box-->
+ 
+    <div class="ui modal" id="game-modal">
+    <div class="header">Add a Game</div>
+
+    <div class="content">
+        <form class="ui form" id="game-form">
+            <div class="field">
+                <label for="title">Game Title</label>
+                <input type="text" name="title" id="title" required>
+            </div>
+
+            <div class="field">
+                <label for="country">Country</label>
+                <select name="country" id="country" class="ui dropdown">
+                    <option value="U.S.">U.S.</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="China">China</option>
+                    <option value="England">England</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="release">Release</label>
+                <select name="release" id="release" class="ui dropdown">
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2005">2005</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2015">2015</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2025">2025</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="file">Choose Image</label>
+                <input type="file" id="file" name="file">
+            </div>
+        </form>
+    </div>
+
+    <div class="actions">
+        <button class="ui green button" id="submit-btn">Add a New Game</button>
+        <button class="ui button" id="clear-btn">Clear</button>
+        <button class="ui red button" id="close-modal">Cancel</button>
+    </div>
+</div>
+
+<script id="game-template" type="text/x-handlebars-template">
+        {{#if this}}
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Release</th>
+                <th>Country</th>
+                <th>Image</th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {{#each this}}
+            <tr>
+            <td>{{title}}</td>
+            <td>{{release}}</td>
+            <td>{{country}}</td>
+            <td><img src="{{image}}" class="ui small image"></td>
+            <td><button class="ui red button" data-id="{{title}}">Delete</button></td>
+            </tr>
+        {{/each}}
+        </tbody>
+        {{/if}}
+</script>
+
+<script>
+$('.ui.dropdown').dropdown();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+<script src="js/script2.js"></script>
+  </body>
+
+<script>
+  // Highlight current page in the menu
+  const current = window.location.pathname.split("/").pop(); 
+  document.querySelectorAll(".ui.menu a.item").forEach(link => {
+    if (link.getAttribute("href") === current) {
+      link.classList.add("active");
+    }
+  });
+</script>
+  
+</html>
